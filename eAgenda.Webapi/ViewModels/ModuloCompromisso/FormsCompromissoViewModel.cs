@@ -23,9 +23,5 @@ namespace eAgenda.Webapi.ViewModels.ModuloCompromisso
         public string HoraTermino { get; set; }
 
         public Guid ContatoId { get; set; }
-
-        public class InserirCompromissoViewModel : FormsCompromissoViewModel { }
-
-        public class EditarCompromissoViewModel : FormsCompromissoViewModel { }
     }
 }

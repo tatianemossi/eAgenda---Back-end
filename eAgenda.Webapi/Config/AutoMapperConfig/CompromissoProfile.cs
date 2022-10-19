@@ -4,7 +4,6 @@ using eAgenda.Dominio.ModuloContato;
 using eAgenda.Webapi.ViewModels.ModuloCompromisso;
 using eAgenda.Webapi.ViewModels.ModuloContato;
 using System;
-using static eAgenda.Webapi.ViewModels.ModuloCompromisso.FormsCompromissoViewModel;
 
 namespace eAgenda.Webapi.Config.AutoMapperConfig
 {
@@ -12,8 +11,9 @@ namespace eAgenda.Webapi.Config.AutoMapperConfig
     {
         public CompromissoProfile()
         {
-            CreateMap<InserirCompromissoViewModel, Compromisso>()
+            CreateMap<FormsCompromissoViewModel, Compromisso>()
                 .ForMember(destino => destino.UsuarioId, opt => opt.MapFrom<UsuarioResolver>())
+                .ForMember(destino => destino.Id, opt => opt.Ignore())
                 .ForMember(destino => destino.HoraInicio, opt => opt.MapFrom(origem => TimeSpan.Parse(origem.HoraInicio)))
                 .ForMember(destino => destino.HoraTermino, opt => opt.MapFrom(origem => TimeSpan.Parse(origem.HoraTermino)));
 

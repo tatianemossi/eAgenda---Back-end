@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using static eAgenda.Webapi.ViewModels.ModuloCompromisso.FormsCompromissoViewModel;
 
 namespace eAgenda.Webapi.Controllers
 {

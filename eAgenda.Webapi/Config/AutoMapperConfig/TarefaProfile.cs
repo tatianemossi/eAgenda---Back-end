@@ -17,11 +17,13 @@ namespace eAgenda.Webapi.Config.AutoMapperConfig
         {
             CreateMap<InserirTarefaViewModel, Tarefa>()
                 .ForMember(destino => destino.UsuarioId, opt => opt.MapFrom<UsuarioResolver>())
+                .ForMember(destino => destino.Id, opt => opt.Ignore())
                 .ForMember(destino => destino.Itens, opt => opt.Ignore())
                 .AfterMap<AdicionarItensMappingAction>();
 
             CreateMap<EditarTarefaViewModel, Tarefa>()
                .ForMember(destino => destino.Itens, opt => opt.Ignore())
+               .ForMember(destino => destino.Id, opt => opt.Ignore())
                .AfterMap<EditarItensMappingAction>();
         }
 
